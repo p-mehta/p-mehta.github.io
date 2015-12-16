@@ -11,12 +11,26 @@
 <script type="text/javascript" src="lib/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="lib/js/jquery-ui-1.11.4.min.js"></script>
 <script type="text/javascript" src="lib/js/angular.min.js"></script>
-<script type="text/javascript" src="lib/js/ui-bootstrap-0.14.3.min.js"></script>
+<script type="text/javascript" src="lib/js/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
 <script type="text/javascript" src="scripts/home.js"></script>
 
 </head>
 <body ng-controller="mainController">
-<div>{{message}}</div>
+<header>
+	<div class="fullWidth" style="height: 325px">
+		<uib-carousel interval="10000" no-wrap="false">
+	        <uib-slide ng-repeat="slide in slides">
+	            <img ng-src="{{slide.image}}" style="margin:auto;" />
+	    	</uib-slide>
+	    </uib-carousel>
+	</div>
+	<div class="alwaysOnTop profileImgDiv">
+		<img ng-src="images/me.jpg" class="profileImg" />
+	</div>
+</header>
+<section>
+	<div>{{message}}</div>
+</section>
 </body>
 </html>

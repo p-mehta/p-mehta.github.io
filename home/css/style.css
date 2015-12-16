@@ -3,3 +3,34 @@
 body {
 	font-size: 10pt;
 }
+
+.imgBg {
+  background-size: 100% auto;
+}
+
+.fullWidth {
+	width: 100% !important;
+}
+
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+	height: inherit;
+}
+
+.carousel-indicators {
+	opacity: 0.40;
+}
+
+.alwaysOnTop {
+	z-index: 9999;
+}
+
+.profileImgDiv {
+	width: 35%;
+	position: fixed;
+	top: 35%;
+	left: 30px;
+}
+
+.profileImg {
+	width: 100%;
+}
