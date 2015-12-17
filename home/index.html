@@ -17,20 +17,38 @@
 
 </head>
 <body ng-controller="mainController">
-<header>
-	<div class="fullWidth" style="height: 325px">
-		<uib-carousel interval="10000" no-wrap="false">
-	        <uib-slide ng-repeat="slide in slides">
-	            <img ng-src="{{slide.image}}" style="margin:auto;" />
-	    	</uib-slide>
-	    </uib-carousel>
-	</div>
-	<div class="alwaysOnTop profileImgDiv">
-		<img ng-src="images/me.jpg" class="profileImg" />
-	</div>
-</header>
-<section>
-	<div>{{message}}</div>
-</section>
+	<header>
+		<div class="navTabs">
+			<uib-tabset justified="true">
+				<uib-tab heading="Home" ng-click="setActive('home')"></uib-tab>
+				<uib-tab heading="Experience" ng-click="setActive('resume')"></uib-tab>
+				<uib-tab heading="Others" ng-click="setActive('others')"></uib-tab>
+				<uib-tab heading="Contact" ng-click="setActive('contact')"></uib-tab>
+			</uib-tabset>
+		</div>
+	</header>
+	<section class="homeSection" ng-class="{active: activeTab == 'home'}">
+		<div class="profile">
+			<img ng-src="images/me.jpg" />
+			<div class="details">
+				<div class="description">This is my home page...</div>
+			</div>
+		</div>
+	</section>
+	<section class="resumeSection" ng-class="{active: activeTab == 'resume'}">
+		<div class="details">
+			<div class="description">My WorkEx...</div>
+		</div>
+	</section>
+	<section class="othersSection" ng-class="{active: activeTab == 'others'}">
+		<div class="details">
+			<div class="description">Everything else belongs here...</div>
+		</div>
+	</section>
+	<section class="contactSection" ng-class="{active: activeTab == 'contact'}">
+		<div class="details">
+			<div class="description">Contact me...</div>
+		</div>
+	</section>
 </body>
 </html>

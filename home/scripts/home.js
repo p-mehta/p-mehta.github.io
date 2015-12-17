@@ -7,14 +7,17 @@
 
 var myApp = angular.module('myApp', ['ui.bootstrap']);
 
-myApp.controller('mainController', ['$scope', '$location', 
-                                    function($scope, $location) {
+myApp.controller('mainController', ['$scope', '$location', '$timeout', 
+                                    function($scope, $location, $timeout) {
 	$scope.message = 'Dev in progress...';
 	
-	$scope.slides = [];
+	$scope.activeTab = 'home';
+	$scope.setActive = function(tab) {
+		$scope.activeTab = tab;
+		
+		$timeout(function() {
+			$("html, body").animate({scrollTop: $('section.active').offset().top}, "slow");
+		});
+	};
 	
-	var slidePath = "images/slides/";
-	$scope.slides.push({ image: slidePath + 'BigSur.jpg' });
-	$scope.slides.push({ image: slidePath + 'SF.jpg' });
-    
 }]);
