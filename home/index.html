@@ -17,38 +17,103 @@
 
 </head>
 <body ng-controller="mainController">
-	<header>
-		<div class="navTabs">
-			<uib-tabset justified="true">
-				<uib-tab heading="Home" ng-click="setActive('home')"></uib-tab>
-				<uib-tab heading="Experience" ng-click="setActive('resume')"></uib-tab>
-				<uib-tab heading="Others" ng-click="setActive('others')"></uib-tab>
-				<uib-tab heading="Contact" ng-click="setActive('contact')"></uib-tab>
-			</uib-tabset>
-		</div>
-	</header>
-	<section class="homeSection" ng-class="{active: activeTab == 'home'}">
-		<div class="profile">
-			<img ng-src="images/me.jpg" />
-			<div class="details">
-				<div class="description">This is my home page...</div>
-			</div>
-		</div>
-	</section>
-	<section class="resumeSection" ng-class="{active: activeTab == 'resume'}">
-		<div class="details">
-			<div class="description">My WorkEx...</div>
-		</div>
-	</section>
-	<section class="othersSection" ng-class="{active: activeTab == 'others'}">
-		<div class="details">
-			<div class="description">Everything else belongs here...</div>
-		</div>
-	</section>
-	<section class="contactSection" ng-class="{active: activeTab == 'contact'}">
-		<div class="details">
-			<div class="description">Contact me...</div>
-		</div>
-	</section>
+    <header>
+        <div class="navTabs">
+            <uib-tabset justified="true" ng-class="{pageBody: true}">
+                <uib-tab heading="Home" ng-click="setActive('home')"></uib-tab>
+                <uib-tab heading="Work Experience" ng-click="setActive('resume')"></uib-tab>
+                <uib-tab heading="Adventures & Travels" ng-click="setActive('others')"></uib-tab>
+                <uib-tab heading="Contact" ng-click="setActive('contact')"></uib-tab>
+            </uib-tabset>
+        </div>
+    </header>
+    <section class="homeSection" ng-class="{active: activeTab == 'home'}">
+        <div class="pageBody profile">
+            <img ng-src="images/me.jpg" />
+            <div class="details">
+                <div class="description">
+                    <h1>Developer</h1>
+                    <p>I'm a software engineer experienced in end-to-end application development through the full life cycle from concept to
+                        delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="resumeSection" ng-class="{active: activeTab == 'resume'}">
+        <div class="pageBody resume details">
+            <div class="description">
+                <h2>Work Experience</h2>
+                <ul>
+                    <li>Sr. Software Engineer - Imagine Communications <span class="subTitle">(formerly RGB Networks Inc.)</span></li>
+                    <span class="subText"> Application development using AngularJS, HTML, CSS, Java<br> Key Projects:<br>
+                        <ul>
+                            <li>BeeHive - a distributed cluster management and resource allocation system</li>
+                            <li>FvteHive - leverage BeeHive for fragmented, longer-than-real-time transcoded, high-quality video delivery</li>
+                            <li>POIS - an eco-system to configure and manage placement opportunity and blackout ads</li>
+                        </ul>
+                    </span>
+                    <li>Sr. Software Engineer - RGB Networks Inc.<br>Software Engineer - RGB Networks Inc.
+                    </li>
+                    <span class="subText"> GUI development using JavaScript, JQuery, HTML, CSS, Java<br> Key Projects:<br>
+                        <ul>
+                            <li>Video Multiprocessing Gateway - a platform for the delivery of advanced video services</li>
+                            <li>Director - a legacy cluster manager for configuring and monitoring different types of nodes and channels</li>
+                        </ul>
+                    </span>
+                    <li>QA Analyst - Beta Soft Systems <span class="subText">(Client: Assurant Specialty Group)</span></li>
+                    <span class="subText"> Manual testing and developed automation test scripts using QuickTest Professional<br> Key
+                        Project:<br>
+                        <ul>
+                            <li>TrackAll v1.5 - a legacy system to track property insurance policies for clients</li>
+                        </ul>
+                    </span>
+                </ul>
+                <div class="resumeLink">
+                    For additional work experiences and other details, please visit my 
+                    <a href="https://www.linkedin.com/in/pratik-mehta-81411112">LinkedIn</a> profile.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="othersSection" ng-class="{active: activeTab == 'others'}">
+        <div class="pageBody details">
+            <div class="description">
+                <h3>Adventures & Travels</h3>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td class="thumbAlbum">
+                                <div class="thumbGroup" ng-repeat="image in album" >
+                                    <img class="thumbImg" src="{{image.src}}" />
+                                </div>
+                            </td>
+                            <td class="thumbAlbum">
+                                <div class="thumbGroup" ng-repeat="image in album" >
+                                    <img class="thumbImg" src="{{image.src}}" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="thumbAlbum">
+                                <div class="thumbGroup" ng-repeat="image in album" >
+                                    <img class="thumbImg" src="{{image.src}}" />
+                                </div>
+                            </td>
+                            <td class="thumbAlbum">
+                                <div class="thumbGroup" ng-repeat="image in album" >
+                                    <img class="thumbImg" src="{{image.src}}" />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="contactSection" ng-class="{active: activeTab == 'contact'}">
+        <div class="pageBody details">
+            <div class="description">Contact me...</div>
+        </div>
+    </section>
 </body>
 </html>

@@ -2,15 +2,24 @@
 
 body {
 	font-size: 10pt;
+	background-color: #ddd;
 }
 
 section {
 	height: 550px;
-	background-image: linear-gradient(to bottom, #4c5e6d 0px, #ecf1f3 100%);
+	padding: 4% 0;
+	/* background-image: linear-gradient(to bottom, #4c5e6d 0px, #ecf1f3 100%); */
+}
+
+.clearfloat {
+	clear: both;
+	font-size: 1px;
+	height: 0;
+	line-height: 0;
 }
 
 .imgBg {
-  background-size: 100% auto;
+    background-size: 100% auto;
 }
 
 .fullWidth {
@@ -25,11 +34,6 @@ section {
 	opacity: 0.40;
 }
 
-.navTabs {
-	position: fixed;
-	z-index: 100;
-}
-
 .alwaysOnTop {
 	z-index: 9999;
 }
@@ -38,7 +42,6 @@ section {
 	height: 80%;
 	position: relative;
 	top: 15%;
-	left: 10%;
 	width: 100%
 }
 
@@ -55,30 +58,91 @@ section {
 }
 
 .details {
-	text-align: center;
-	position: relative;
-	top: 56%;
 }
 
 .profile > .details {
 	float: left;
 	text-align: left;
+	position: relative;
+	top: 50%;
 	left: 4%;
 	width: 60%
 }
 
-/* .homeSection {
-	background-image: url(../images/slides/SF.jpg);
-} */
+.navTabs {
+	position: fixed;
+	z-index: 100;
+	border-bottom: 1px solid #fff;
+	background-color: #ddd;
+}
 
-.nav-tabs, .nav-tabs>li>a:focus {
-	background-color: #ecf1f3;
+.pageBody {
+	max-width: 60%;
+	margin: 0 20%;
+}
+
+.nav-tabs {
+	background: none;
+	border: none !important;
 }
 
 .nav-tabs>li>a:hover, .nav-tabs>li.active>a:hover {
-	background-color: #e1e3e4;
+	background-color: #d8d8d8;
+	border: none !important;
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
-	background-color: #cecece;
+.nav-tabs>li.active>a, .nav-tabs>li>a:focus, .nav-tabs>li.active>a:focus {
+	background: none;
+	border: none !important;
+}
+
+.resume>.description>ul>li {
+	font-weight: bold;
+}
+
+.subTitle {
+	font-style: italic;
+	font-size: 9pt;
+}
+
+.subText {
+	font-size: 9pt;
+}
+
+.resumeLink {
+	font-size: 9pt;
+	float: left;
+	margin: 4px 0px;
+}
+
+.thumbAlbum {
+	position: relative;
+	height: 35%;
+}
+
+.thumbGroup {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.thumbImg {
+	width: 100%;
+	border: 2px solid #eee;
+}
+
+.thumbGroup:nth-child(1) {
+	transform: rotate(-7deg);
+}
+
+.thumbGroup:nth-child(2) {
+	transform: rotate(-2deg);
+}
+
+.thumbGroup:nth-child(3) {
+	transform: rotate(3deg);
+}
+
+.thumbGroup:nth-child(4) {
+	transform: rotate(8deg);
 }
