@@ -5,10 +5,21 @@ body {
 	background-color: #ddd;
 }
 
+header {
+	position: fixed;
+	z-index: 100;
+}
+
 section {
 	height: 550px;
 	padding: 4% 0;
-	/* background-image: linear-gradient(to bottom, #4c5e6d 0px, #ecf1f3 100%); */
+	background-image: linear-gradient(to bottom, #ddd 0px, #e6e6e6 100%);
+}
+
+footer {
+	height: 30px;
+	background-color: #e6e6e6;
+	color: lightslategrey;
 }
 
 .floatLeft {
@@ -40,8 +51,9 @@ section {
 	clear: both;
 }
 
-.horizontalLine.closing {
+footer .horizontalLine {
 	border-color: #fff;
+	margin: 0 0 8px;
 }
 
 .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
@@ -89,8 +101,6 @@ section {
 }
 
 .navTabs {
-	position: fixed;
-	z-index: 100;
 	border-bottom: 1px solid #fff;
 	background-color: #ddd;
 }
@@ -228,7 +238,7 @@ section {
 	float: right;
 }
 
-.caption.closing {
+footer .caption {
 	margin-right: 4px;
 	margin-bottom: 4px;
 }
