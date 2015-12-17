@@ -69,8 +69,7 @@
                     </span>
                 </ul>
                 <div class="resumeLink">
-                    For additional work experiences and other details, please visit my 
-                    <a href="https://www.linkedin.com/in/pratik-mehta-81411112">LinkedIn</a> profile.
+                    For additional work experiences and other details, please visit <link-social type="linkedin"></link-social>
                 </div>
             </div>
         </div>
@@ -79,41 +78,31 @@
         <div class="pageBody details">
             <div class="description">
                 <h3>Adventures & Travels</h3>
-                <table width="100%">
-                    <tbody>
-                        <tr>
-                            <td class="thumbAlbum">
-                                <div class="thumbGroup" ng-repeat="image in album" >
-                                    <img class="thumbImg" src="{{image.src}}" />
-                                </div>
-                            </td>
-                            <td class="thumbAlbum">
-                                <div class="thumbGroup" ng-repeat="image in album" >
-                                    <img class="thumbImg" src="{{image.src}}" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="thumbAlbum">
-                                <div class="thumbGroup" ng-repeat="image in album" >
-                                    <img class="thumbImg" src="{{image.src}}" />
-                                </div>
-                            </td>
-                            <td class="thumbAlbum">
-                                <div class="thumbGroup" ng-repeat="image in album" >
-                                    <img class="thumbImg" src="{{image.src}}" />
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="albumRow">
+                    <div class="albumCol" ng-click="showAlbum('SF')" >
+                        <img class="albumImg" src="images/slides/SF.jpg" />
+                        <span class="albumTitle">Golden Gate Bridge</span>
+                    </div>
+                    <div class="albumCol" ng-click="showAlbum('BigSur')" >
+                        <img class="albumImg" src="images/slides/Bigsur.jpg" />
+                        <span class="albumTitle">Big Sur</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <section class="contactSection" ng-class="{active: activeTab == 'contact'}">
         <div class="pageBody details">
-            <div class="description">Contact me...</div>
+            <div class="description">
+                <h3>Contact</h3>
+                <ul class="contactsList"> 
+                    <li><link-social type="linkedin"></link-social></li>
+                    <li><link-social type="facebook"></link-social></li>
+                </ul>
+            </div>
         </div>
     </section>
+    <div class="horizontalLine closing"></div>
+    <div class="caption closing">Developed using AngularJS v1.4.8 and Bootstrap UI v0.14.3</div>
 </body>
 </html>

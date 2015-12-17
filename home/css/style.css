@@ -11,6 +11,14 @@ section {
 	/* background-image: linear-gradient(to bottom, #4c5e6d 0px, #ecf1f3 100%); */
 }
 
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
 .clearfloat {
 	clear: both;
 	font-size: 1px;
@@ -24,6 +32,16 @@ section {
 
 .fullWidth {
 	width: 100% !important;
+}
+
+.horizontalLine {
+	border-bottom: 1px solid lightslategray;
+	margin: 5px 0 8px;
+	clear: both;
+}
+
+.horizontalLine.closing {
+	border-color: #fff;
 }
 
 .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
@@ -58,6 +76,7 @@ section {
 }
 
 .details {
+	height: 100%;
 }
 
 .profile > .details {
@@ -115,9 +134,55 @@ section {
 	margin: 4px 0px;
 }
 
+.albumContainer {
+	width: 100%;
+}
+
+.albumTable {
+	max-height: 100%;
+	max-width: 100%;
+	border-collapse: separate;
+	border-spacing: 0px 8px;
+}
+
+.albumRow {
+	width: 100%;
+	margin-bottom: 25px;
+	float: left;
+}
+
+.albumCol {
+	text-align: center;
+	width: 25%;
+	float: left;
+	margin: 0px 25px;
+}
+
+.albumTitle {
+	font-weight: bold;
+}
+
+.albumCol .albumTitle {
+	opacity: 0;
+	-moz-transition: opacity 0.3s ease-out;
+	-webkit-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+}
+
+.albumCol:hover {
+	cursor: pointer;
+}
+
+.albumCol:hover .albumTitle {
+	opacity: 1.0;
+	-moz-transition: opacity 0.3s ease-out;
+	-webkit-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+}
+
 .thumbAlbum {
 	position: relative;
-	height: 35%;
+	width: 25%;
 }
 
 .thumbGroup {
@@ -126,9 +191,15 @@ section {
 	left: 0px;
 }
 
-.thumbImg {
-	width: 100%;
-	border: 2px solid #eee;
+.thumbImg, .albumImg {
+	width: auto;
+	max-width: 100%;
+	border: 8px solid #eee;
+}
+
+.thumbTitle {
+	font-weight: bold;
+	color: lightslategrey;
 }
 
 .thumbGroup:nth-child(1) {
@@ -145,4 +216,28 @@ section {
 
 .thumbGroup:nth-child(4) {
 	transform: rotate(8deg);
+}
+
+.contactLinks {
+	margin: 0px 4px;
+}
+
+.caption {
+	font-size: 9pt;
+	font-style: italic;
+	float: right;
+}
+
+.caption.closing {
+	margin-right: 4px;
+	margin-bottom: 4px;
+}
+
+ul.contactsList {
+	list-style-type: none;
+}
+
+ul.contactsList > li {
+	float: left;
+	margin-right: 4px;
 }
