@@ -20,14 +20,14 @@
     <header>
         <div class="navTabs">
             <uib-tabset justified="true" ng-class="{pageBody: true}">
-                <uib-tab heading="Home" ng-click="setActive('home')"></uib-tab>
-                <uib-tab heading="Work Experience" ng-click="setActive('resume')"></uib-tab>
-                <uib-tab heading="Adventures & Travels" ng-click="setActive('others')"></uib-tab>
-                <uib-tab heading="Contact" ng-click="setActive('contact')"></uib-tab>
+                <uib-tab heading="Home" ng-click="setActive('home')" active="activeTab.home"></uib-tab>
+                <uib-tab heading="Work Experience" ng-click="setActive('resume')" active="activeTab.resume"></uib-tab>
+                <uib-tab heading="Adventures & Travels" ng-click="setActive('others')" active="activeTab.others"></uib-tab>
+                <uib-tab heading="Contact" ng-click="setActive('contact')" active="activeTab.contact"></uib-tab>
             </uib-tabset>
         </div>
     </header>
-    <section class="homeSection" ng-class="{active: activeTab == 'home'}">
+    <section class="homeSection" ng-class="{active: activeTab.home}">
         <div class="pageBody profile">
             <img ng-src="images/me.png" />
             <div class="details">
@@ -39,7 +39,7 @@
             </div>
         </div>
     </section>
-    <section class="resumeSection" ng-class="{active: activeTab == 'resume'}">
+    <section class="resumeSection" ng-class="{active: activeTab.resume}">
         <div class="pageBody resume details">
             <div class="description">
                 <h2>Work Experience</h2>
@@ -74,7 +74,7 @@
             </div>
         </div>
     </section>
-    <section class="othersSection" ng-class="{active: activeTab == 'others'}">
+    <section class="othersSection" ng-class="{active: activeTab.others}">
         <div class="pageBody details">
             <div class="description">
                 <h3>Adventures & Travels</h3>
@@ -91,7 +91,7 @@
             </div>
         </div>
     </section>
-    <section class="contactSection" ng-class="{active: activeTab == 'contact'}">
+    <section class="contactSection" ng-class="{active: activeTab.contact}">
         <div class="pageBody details">
             <div class="description">
                 <h3>Contact</h3>
