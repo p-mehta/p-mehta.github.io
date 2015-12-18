@@ -13,10 +13,11 @@ myApp.directive('linkSocial', [function() {
 		replace: true,
 		templateUrl: 'fragments/social.html',
 		scope: {
-			type: '=ngModel'
+			type: '=ngModel',
+			sml: '=sml'
 		},
 		link: function($scope, element, attrs) {
-			console.log($scope.type);
+			
 		}
 	};
 }]);

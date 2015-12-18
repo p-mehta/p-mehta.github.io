@@ -248,6 +248,7 @@ footer .caption {
 
 ul.contactsList {
 	list-style-type: none;
+	padding-left: 0px;
 }
 
 ul.contactsList > li {
@@ -292,4 +293,8 @@ ul.contactsList > li {
 .slideShow .start:hover, .slideShow .pause:hover {
 	cursor: pointer;
 	opacity: 1.0;
+}
+
+.inlineBlock {
+	display: inline-block !important;
 }
