@@ -34,6 +34,16 @@ myApp.directive('slideShow', [function() {
 			$scope.close = function() {
 				$scope.$parent.closeSlideShow();
 			};
+			
+			$scope.interval = 10000;
+			
+			$scope.start = function() {
+				$scope.interval = 10000;
+			};
+			
+			$scope.stop = function() {
+				$scope.interval = 0;
+			};
 		}
 	};
 }]);
@@ -54,11 +64,11 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	
 	$scope.albums = [
 	                 { name: 'SF', images: [
-	                                        { image: '/images/slides/SF.jpg'}
+	                                        { image: 'images/slides/SF.jpg'}
 	                                        ] },
                     { name: 'BigSur', images: [
-                                        { image: '/images/slides/BigSur.jpg'}
-                                        ] }
+                                               { image: 'images/slides/BigSur.jpg'}
+                                               ] }
 	                 ];
 	
 	$scope.currAlbum = [];
@@ -67,25 +77,9 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	$scope.showAlbum = function(albumName) {
 		var album = $filter('filter')($scope.albums, {name: albumName}, true);
 		if (album) {
-			$scope.currAlbum = album.images;
+			$scope.currAlbum = album[0].images;
 		}
-		$scope.currAlbum = [
-			                { image: 'images/slides/BigSur.jpg' },
-			                { image: 'images/slides/SF.jpg' },
-			                { image: 'images/slides/BigSur.jpg' },
-			                { image: 'images/slides/SF.jpg' }
-			                ];
 		$scope.showSlideShow = true;
-	};
-	
-	$scope.slideInterval = 10000;
-	
-	$scope.startSlideShow = function() {
-		$scope.slideInterval = 10000;
-	};
-	
-	$scope.stopSlideShow = function() {
-		$scope.slideInterval = 0;
 	};
 	
 	$scope.closeSlideShow = function() {

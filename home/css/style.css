@@ -169,6 +169,7 @@ footer .horizontalLine {
 	width: 25%;
 	float: left;
 	margin: 0px 25px;
+	position: relative;
 }
 
 .albumTitle {
@@ -193,42 +194,34 @@ footer .horizontalLine {
 	transition: opacity 0.3s ease-out;
 }
 
-.thumbAlbum {
-	position: relative;
-	width: 25%;
-}
-
-.thumbGroup {
+.albumGroup {
 	position: absolute;
-	top: 0px;
-	left: 0px;
 }
 
-.thumbImg, .albumImg {
+.albumImg {
 	width: auto;
 	max-width: 100%;
 	border: 8px solid #eee;
 }
 
-.thumbTitle {
-	font-weight: bold;
-	color: lightslategrey;
-}
-
-.thumbGroup:nth-child(1) {
+.albumGroup:nth-child(1) {
 	transform: rotate(-7deg);
 }
 
-.thumbGroup:nth-child(2) {
+.albumGroup:nth-child(2) {
 	transform: rotate(-2deg);
 }
 
-.thumbGroup:nth-child(3) {
+.albumGroup:nth-child(3) {
 	transform: rotate(3deg);
 }
 
-.thumbGroup:nth-child(4) {
+.albumGroup:nth-child(4) {
 	transform: rotate(8deg);
+}
+
+.contactSection {
+	height: 275px;
 }
 
 .contactLinks {
@@ -253,7 +246,8 @@ ul.contactsList {
 
 ul.contactsList > li {
 	float: left;
-	margin-right: 4px;
+	margin-right: 8px;
+	margin-bottom: 4px;
 }
 
 .overlay {
@@ -281,16 +275,16 @@ ul.contactsList > li {
 }
 
 .slideShow .start, .slideShow .pause {
-	color: white;
-	opacity: 0.75;
-	font-size: 16pt;
-	font-family: "Webdings";
 	text-align: center;
 	position: relative;
 	top: -6%;
 }
 
-.slideShow .start:hover, .slideShow .pause:hover {
+.slideShow .start span, .slideShow .pause span {
+	opacity: 0.55;
+}
+
+.slideShow .start span:hover, .slideShow .pause span:hover {
 	cursor: pointer;
 	opacity: 1.0;
 }

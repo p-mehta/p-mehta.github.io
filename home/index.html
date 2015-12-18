@@ -33,8 +33,8 @@
             <div class="details">
                 <div class="description">
                     <h1>Developer</h1>
-                    <p>I'm a software engineer experienced in end-to-end application development through the full life cycle from concept to
-                        delivery.</p>
+                    <p>I'm a software engineer living in the bay area, experienced in end-to-end application development through the full life cycle from concept to
+                        delivery, and a Master's degree from USC.</p>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
                     </span>
                 </ul>
                 <div class="resumeLink">
-                    For additional work experiences and other details, please visit <link-social class="inlineBlock" ng-model="type.li" sml="true"></link-social>
+                    For additional work experiences and other details, please visit <link-social ng-model="type.li" sml="true"></link-social>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
                 <div class="albumRow">
                     <div class="albumCol" ng-click="showAlbum('SF')" >
                         <img class="albumImg" src="images/slides/SF.jpg" />
-                        <span class="albumTitle">Golden Gate Bridge</span>
+                        <span class="albumTitle">San Francisco</span>
                     </div>
                     <div class="albumCol" ng-click="showAlbum('BigSur')" >
                         <img class="albumImg" src="images/slides/BigSur.jpg" />
@@ -95,9 +95,9 @@
         <div class="pageBody details">
             <div class="description">
                 <h3>Contact</h3>
-                <ul class="contactsList"> 
-                    <li><link-social ng-model="type.li"></link-social></li>
-                    <li><link-social ng-model="type.fb"></link-social></li>
+                <ul class="contactsList">
+                    <li>Connect via <link-social ng-model="type.li"></link-social></li>
+                    <li>View profile on <link-social ng-model="type.fb"></link-social></li>
                 </ul>
             </div>
         </div>
@@ -107,7 +107,7 @@
         <div class="caption closing">Developed using AngularJS v1.4.8 and Bootstrap UI v0.14.3</div>
     </footer>
     <slide-show slides="currAlbum" ng-show="showSlideShow"></slide-show>
-    <div class="overlay" ng-show="showSlideShow">
+    <!-- <div class="overlay" ng-show="showSlideShow">
         <div class="close" ng-click="closeSlideShow()">X</div>
         <div class="slideShow fullWidth" style="height: 550px">
             <uib-carousel interval="slideInterval" no-wrap="false">
@@ -115,11 +115,15 @@
                     <img ng-src="{{slide.image}}" style="margin:auto;" />
                 </uib-slide>
             </uib-carousel>
-            <div ng-class="{pause: slideInterval == 0, start: slideInterval > 0 }">
-                <span ng-show="slideInterval == 0" ng-click="startSlideShow()" title="Continue slideshow">4</span>
-                <span ng-show="slideInterval >= 1" ng-click="stopSlideShow()" title="Pause slideshow">;</span>
+            <div ng-class="{pause: slideInterval == 0, start: slideInterval > 0 }" ng-show="currAlbum.length > 0">
+                <span ng-show="slideInterval == 0" ng-click="startSlideShow()" title="Continue slideshow">
+                    <img src="images/icons/play_w.png" width="32px"/>
+                </span>
+                <span ng-show="slideInterval >= 1" ng-click="stopSlideShow()" title="Pause slideshow">
+                    <img src="images/icons/pause_w.png" width="32px"/>
+                </span>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
