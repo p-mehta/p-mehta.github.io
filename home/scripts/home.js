@@ -13,7 +13,7 @@ myApp.directive('linkSocial', [function() {
 		replace: true,
 		templateUrl: 'fragments/social.html',
 		scope: {
-			type: '=linkType'
+			type: '=ngModel'
 		},
 		link: function($scope, element, attrs) {
 			console.log($scope.type);
@@ -90,6 +90,11 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	$scope.closeSlideShow = function() {
 		$scope.currAlbum = [];
 		$scope.showSlideShow = false;
+	};
+	
+	$scope.type = {
+			li: 'linkedin',
+			fb: 'facebook'
 	};
 	
 	var init = function() {
