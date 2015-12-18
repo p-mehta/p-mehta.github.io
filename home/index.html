@@ -29,7 +29,7 @@
     </header>
     <section class="homeSection" ng-class="{active: activeTab == 'home'}">
         <div class="pageBody profile">
-            <img ng-src="images/me.jpg" />
+            <img ng-src="images/me.png" />
             <div class="details">
                 <div class="description">
                     <h1>Developer</h1>
@@ -107,7 +107,7 @@
         <div class="caption closing">Developed using AngularJS v1.4.8 and Bootstrap UI v0.14.3</div>
     </footer>
     <slide-show slides="currAlbum" ng-show="showSlideShow"></slide-show>
-    <!-- <div class="overlay" ng-show="showSlideShow">
+    <div class="overlay" ng-show="showSlideShow">
         <div class="close" ng-click="closeSlideShow()">X</div>
         <div class="slideShow fullWidth" style="height: 550px">
             <uib-carousel interval="slideInterval" no-wrap="false">
@@ -115,7 +115,7 @@
                     <img ng-src="{{slide.image}}" style="margin:auto;" />
                 </uib-slide>
             </uib-carousel>
-            <div ng-class="{pause: slideInterval == 0, start: slideInterval > 0 }" ng-show="currAlbum.length > 0">
+            <div ng-class="{pause: slideInterval == 0, start: slideInterval > 0 }" ng-show="currAlbum">
                 <span ng-show="slideInterval == 0" ng-click="startSlideShow()" title="Continue slideshow">
                     <img src="images/icons/play_w.png" width="32px"/>
                 </span>
@@ -124,6 +124,6 @@
                 </span>
             </div>
         </div>
-    </div> -->
+    </div>
 </body>
 </html>

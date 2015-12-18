@@ -1,18 +1,18 @@
 <div class="overlay" ng-show="showSlideShow">
-        <div class="close" ng-click="close()">X</div>
-        <div class="slideShow fullWidth" style="height: 550px">
-            <uib-carousel interval="interval" no-wrap="false">
-                <uib-slide ng-repeat="slide in slides">
-                    <img ng-src="{{slide.image}}" style="margin:auto;" />
-                </uib-slide>
-            </uib-carousel>
-            <div class="action" ng-class="{pause: interval == 0, start: interval > 0 }" ng-show="slides.length > 1">
-                <span ng-show="interval == 0" ng-click="start()" title="Continue slideshow">
-                    <img src="images/icons/play_w.png" width="32px"/>
-                </span>
-                <span ng-show="interval >= 1" ng-click="stop()" title="Pause slideshow">
-                    <img src="images/icons/pause_w.png" width="32px"/>
-                </span>
-            </div>
+    <div class="close" ng-click="close()">X</div>
+    <div class="slideShow fullWidth" style="height: 550px">
+        <uib-carousel interval="interval" no-wrap="false">
+            <uib-slide ng-repeat="slide in slides">
+                <img ng-src="{{slide.image}}" style="margin:auto;" />
+            </uib-slide>
+        </uib-carousel>
+        <div class="action" ng-class="{pause: interval == 0, start: interval > 0 }" ng-show="slides.length > 1">
+            <span ng-show="interval == 0" ng-click="start()" title="Continue slideshow">
+                <img src="images/icons/play_w.png" width="32px"/>
+            </span>
+            <span ng-show="interval >= 1" ng-click="stop()" title="Pause slideshow">
+                <img src="images/icons/pause_w.png" width="32px"/>
+            </span>
         </div>
     </div>
+</div>
