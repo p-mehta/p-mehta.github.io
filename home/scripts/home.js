@@ -60,13 +60,7 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
                                         ] }
 	                 ];
 	
-	$scope.currAlbum = [
-	                {src: 'images/slides/BigSur.jpg'},
-	                {src: 'images/slides/SF.jpg'},
-	                {src: 'images/slides/BigSur.jpg'},
-	                {src: 'images/slides/SF.jpg'}
-	                ];
-	
+	$scope.currAlbum = [];
 	$scope.showSlideShow = false;
 	
 	$scope.showAlbum = function(albumName) {
