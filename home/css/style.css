@@ -22,6 +22,10 @@ footer {
 	color: lightslategrey;
 }
 
+.noscroll {
+	overflow-y: hidden;
+}
+
 .floatLeft {
 	float: left;
 }
@@ -271,7 +275,9 @@ ul.contactsList > li {
 .slideShow {
 	opacity: 1;
 	position: fixed;
-	top: 6%;
+	/* top: 6%; */
+	margin: 6% 0;
+	background-color: rgba(34, 34, 34, 0.5);
 }
 
 .slideShow .start, .slideShow .pause {

@@ -1,6 +1,6 @@
-<div class="overlay" ng-show="showSlideShow">
+<div class="overlay slideShowContainer" ng-show="showSlideShow">
     <div class="close" ng-click="close()">X</div>
-    <div class="slideShow fullWidth" style="height: 550px">
+    <div class="slideShow fullWidth" style="height: 500px">
         <uib-carousel interval="interval" no-wrap="false">
             <uib-slide ng-repeat="slide in slides">
                 <img ng-src="{{slide.image}}" style="margin:auto;" />
