@@ -90,6 +90,9 @@
                 </div>
             </div>
         </div>
+        <div ng-show="showSlideShow">
+            <slide-show slides="currAlbum"></slide-show>
+        </div>
     </section>
     <section class="contactSection" ng-class="{active: activeTab.contact}">
         <div class="pageBody details">
@@ -106,6 +109,5 @@
         <div class="horizontalLine closing"></div>
         <div class="caption closing">Developed using AngularJS v1.4.8 and Bootstrap UI v0.14.3</div>
     </footer>
-    <slide-show slides="currAlbum" ng-show="showSlideShow"></slide-show>
 </body>
 </html>

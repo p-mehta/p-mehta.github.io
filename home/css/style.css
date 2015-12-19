@@ -24,6 +24,7 @@ footer {
 }
 
 .noscroll {
+	overflow-x: hidden;
 	overflow-y: hidden;
 }
 
@@ -68,7 +69,7 @@ footer .horizontalLine {
 }
 
 .carousel-indicators {
-	display: none;
+	/* display: none; */
 	opacity: 0.40;
 }
 

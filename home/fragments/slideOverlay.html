@@ -1,12 +1,12 @@
-<div class="overlay slideShowContainer" ng-show="showSlideShow">
+<div class="overlay slideShowContainer">
     <div class="close" ng-click="close()">X</div>
     <div class="slideShow fullWidth" style="height: 500px">
-        <uib-carousel interval="interval" no-wrap="false">
+        <uib-carousel interval="interval" no-wrap="false" data-keyboard="true">
             <uib-slide ng-repeat="slide in slides">
                 <img ng-src="{{slide.image}}" style="margin:auto;" />
             </uib-slide>
         </uib-carousel>
-        <div class="action" ng-class="{pause: interval == 0, start: interval > 0 }" ng-show="slides.length > 1">
+        <div class="action" ng-class="{pause: interval == 0, start: interval > 0 }" ng-hide="true">
             <span ng-show="interval == 0" ng-click="start()" title="Continue slideshow">
                 <img src="images/icons/play_w.png" width="32px"/>
             </span>

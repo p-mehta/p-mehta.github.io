@@ -44,6 +44,30 @@ myApp.directive('slideShow', [function() {
 			$scope.stop = function() {
 				$scope.interval = 0;
 			};
+			
+			$(document).keyup(function(e) {
+				if (!$scope.$parent.showSlideShow) { return; }
+				
+				var keyCode = e.which || e.keyCode;
+				if (keyCode === 37) {
+				   // Previous
+				   $(".carousel-control.left").click();
+				   console.log('prev');
+				   return false;
+				}
+				if (keyCode === 39) {
+				   // Next
+				   $(".carousel-control.right").click();
+				   console.log('next');
+				   return false;
+				}
+				if (keyCode === 27) {
+					$scope.$parent.closeSlideShow();
+					$scope.$apply();
+					console.log('close');
+					return false;
+				}
+			});
 		}
 	};
 }]);
@@ -111,9 +135,13 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
     
 	$scope.albums = [
 	                 { name: 'SF', images: [
-	                                        { image: 'images/slides/SF.jpg'}
+	                                        { image: 'images/slides/SF.jpg'},
+	                                        { image: 'images/slides/BigSur.jpg'},
+	                                        { image: 'images/slides/BigSur.jpg'}
 	                                        ] },
                     { name: 'BigSur', images: [
+                                               { image: 'images/slides/BigSur.jpg'},
+                                               { image: 'images/slides/BigSur.jpg'},
                                                { image: 'images/slides/BigSur.jpg'}
                                                ] }
 	                 ];
