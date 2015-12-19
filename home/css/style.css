@@ -7,6 +7,7 @@ body {
 
 header {
 	position: fixed;
+	width: 100%;
 	z-index: 100;
 }
 
@@ -120,6 +121,19 @@ footer .horizontalLine {
 .nav-tabs {
 	background: none;
 	border: none !important;
+}
+
+.nav-tabs>li>a {
+	color: #aaa;
+}
+
+.nav-tabs>li>a:focus {
+	color: #aaa;
+	outline: 0;
+}
+
+.nav-tabs>li>a:hover {
+	color: #888;
 }
 
 .nav-tabs>li>a:hover, .nav-tabs>li.active>a:hover {
