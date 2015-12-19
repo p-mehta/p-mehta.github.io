@@ -134,15 +134,20 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	};
     
 	$scope.albums = [
-	                 { name: 'SF', images: [
-	                                        { image: 'images/slides/SF.jpg'},
-	                                        { image: 'images/slides/BigSur.jpg'},
-	                                        { image: 'images/slides/BigSur.jpg'}
+	                 { name: 'norway', images: [
+	                                        { image: 'images/album/norway/norway_img1.png'},
+	                                        { image: 'images/album/norway/norway_img2.png'},
+	                                        { image: 'images/album/norway/norway_img3.png'},
+	                                        { image: 'images/album/norway/norway_img4.png'},
+	                                        { image: 'images/album/norway/norway_img5.png'},
+	                                        { image: 'images/album/norway/norway_img6.png'},
+	                                        { image: 'images/album/norway/norway_img7.png'},
+	                                        { image: 'images/album/norway/norway_img8.png'},
+	                                        { image: 'images/album/norway/norway_img9.png'},
 	                                        ] },
-                    { name: 'BigSur', images: [
-                                               { image: 'images/slides/BigSur.jpg'},
-                                               { image: 'images/slides/BigSur.jpg'},
-                                               { image: 'images/slides/BigSur.jpg'}
+                    { name: 'antelopecnyn', images: [
+                                               { image: 'images/album/antelopecnyn/antelopecnyn_img1.png'},
+                                               { image: 'images/album/antelopecnyn/antelopecnyn_img2.png'},
                                                ] }
 	                 ];
 	

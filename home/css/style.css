@@ -189,28 +189,7 @@ footer .horizontalLine {
 	float: left;
 	margin: 0px 25px;
 	position: relative;
-}
-
-.albumTitle {
-	font-weight: bold;
-}
-
-.albumCol .albumTitle {
-	opacity: 0;
-	-moz-transition: opacity 0.3s ease-out;
-	-webkit-transition: opacity 0.3s ease-out;
-	transition: opacity 0.3s ease-out;
-}
-
-.albumCol:hover {
-	cursor: pointer;
-}
-
-.albumCol:hover .albumTitle {
-	opacity: 1.0;
-	-moz-transition: opacity 0.3s ease-out;
-	-webkit-transition: opacity 0.3s ease-out;
-	transition: opacity 0.3s ease-out;
+	border: 8px solid #eee;
 }
 
 .albumGroup {
@@ -220,7 +199,41 @@ footer .horizontalLine {
 .albumImg {
 	width: auto;
 	max-width: 100%;
-	border: 8px solid #eee;
+}
+
+.albumTitle {
+	font-weight: bold;
+	background-color: #eee;
+}
+
+/* .albumCol .albumTitle {
+	opacity: 0;
+	-moz-transition: opacity 0.3s ease-out;
+	-webkit-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+} */
+
+.albumCol:hover .albumImg {
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+.albumCol:hover {
+	cursor: pointer;
+}
+
+/* .albumCol:hover .albumTitle {
+	opacity: 1.0;
+	-moz-transition: opacity 0.3s ease-out;
+	-webkit-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+} */
+
+.albumCol:hover .albumImg {
+	-moz-transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+	transform: rotate(-2deg);
 }
 
 .albumGroup:nth-child(1) {
