@@ -24,6 +24,19 @@ footer {
 	color: lightslategrey;
 }
 
+button {
+	border-radius: 5px;
+	background-image: linear-gradient(to bottom, white 0px, rgb(222, 221, 221) 100%);
+}
+
+button:hover {
+	background-image: linear-gradient(to bottom, white 0px, rgb(222, 221, 221) 100%);
+}
+
+button:focus {
+	outline: 0;
+}
+
 .noscroll {
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -287,11 +300,20 @@ footer .caption {
 
 /* Contact section */
 .contactSection {
-	height: 275px;
+	min-height: 275px;
+	max-height: 550px;
 }
 
 .contactLinks {
 	margin: 0px 4px;
+}
+
+.gmailProfile {
+	margin: 0px 8px;
+}
+
+.locationProfile img {
+	margin-top: -5px;
 }
 
 ul.contactsList {
@@ -303,6 +325,26 @@ ul.contactsList > li {
 	float: left;
 	margin-right: 8px;
 	margin-bottom: 4px;
+}
+
+.emailForm div {
+	margin: 16px 8px;
+}
+
+.emailForm input, .emailForm textarea {
+	padding-left: 4px;
+	width: 250px;
+	border: 2px inset;
+	border-radius: 5px;
+}
+
+.emailAction {
+	margin: -16px 8px !important;
+}
+
+.marker {
+	text-align: center;
+	width: 60px;
 }
 
 /* Overlay */

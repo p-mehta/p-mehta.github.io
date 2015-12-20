@@ -17,7 +17,13 @@ myApp.directive('linkSocial', [function() {
 			sml: '=sml'
 		},
 		link: function($scope, element, attrs) {
+			$scope.showEmail = function() {
+				$scope.$parent.showEmail();
+			};
 			
+			$scope.showLocation = function() {
+				$scope.$parent.showLocation();
+			};
 		}
 	};
 }]);
@@ -97,15 +103,18 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 		var scrollPos = angular.element($window).scrollTop() + $window.innerHeight/2;
 	    $('section').each(function () {
 	        var currLink = $(this);
-	        var contactElem = $('section.contactSection');
+	        /*var contactElem = $('section.contactSection');
 	        if (contactElem.position().top < scrollPos + contactElem.height() ) { 
         		$('section').removeClass('active');
         		contactElem.addClass('active');
         		setActiveTab('contact');
-    		} else if (currLink.position().top <= scrollPos && currLink.position().top + currLink.height() > scrollPos) {
+    		} else */if (currLink.position().top <= scrollPos && currLink.position().top + currLink.height() > scrollPos) {
 	            $('section').removeClass('active');
 	            currLink.addClass('active');
-	    		if (currLink.hasClass('othersSection')) {
+	            if (currLink.hasClass('contactSection')) {
+	    			setActiveTab('contact');
+	    		}
+	            if (currLink.hasClass('othersSection')) {
 	    			setActiveTab('others');
 	    		}
 	    		if (currLink.hasClass('resumeSection')) {
@@ -169,7 +178,31 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	
 	$scope.type = {
 			li: 'linkedin',
-			fb: 'facebook'
+			fb: 'facebook',
+			gm: 'gmail',
+			loc: 'location'
+	};
+	
+	$scope.contactComponent = 'email';
+	$scope.showEmail = function() {
+		$scope.contactComponent = 'email';
+	};
+	
+	$scope.email = {
+			to: 'mehta.pratik1985@gmail.com',
+			from: '',
+			subject: '',
+			body: ''
+	};
+	
+	$scope.sendEmail = function() {
+		console.log('email from: ' + $scope.email.from + 
+						 ' subject: ' + $scope.email.subject + 
+						 ' body: ' + $scope.email.body);
+	};
+	
+	$scope.showLocation = function() {
+		$scope.contactComponent = 'location';
 	};
 	
 	var init = function() {

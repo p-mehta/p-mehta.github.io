@@ -106,10 +106,35 @@
         <div class="pageBody details">
             <div class="description">
                 <h3>Contact</h3>
-                <ul class="contactsList">
-                    <li>Connect via <link-social ng-model="type.li"></link-social></li>
-                    <li>View profile on <link-social ng-model="type.fb"></link-social></li>
-                </ul>
+                <div class="floatLeft">
+                    <ul class="contactsList">
+                        <!-- <li><link-social ng-model="type.loc"></link-social></li> -->
+                        <li><link-social ng-model="type.gm"></link-social></li>
+                        <li><link-social ng-model="type.li"></link-social></li>
+                        <li><link-social ng-model="type.fb"></link-social></li>
+                    </ul>
+                </div>
+                <div class="clearfloat"></div>
+                <div class="marker">&#x25BE;</div>
+                <div class="clearfloat"></div>
+                <div class="floatLeft locationInfo" ng-show="contactComponent == 'location'">
+                    Sunnyvale, CA
+                </div>
+                <div class="clearfloat"></div>
+                <div class="floatLeft emailForm" ng-show="contactComponent == 'email'">
+                    <div class="emailFrom">
+                        <input type="text" placeholder="Name" ng-model="email.name"/>
+                    </div>
+                    <div class="emailSubject">
+                        <input type="text" placeholder="Subject" ng-model="email.subject"/>
+                    </div>
+                    <div class="emailBody">
+                        <textarea row="5" column="20" ng-model="email.body"></textarea>
+                    </div>
+                    <div class="emailAction floatRight">
+                        <button type="submit" ng-click="sendEmail()">Send</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
