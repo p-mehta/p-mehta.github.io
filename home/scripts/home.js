@@ -58,19 +58,16 @@ myApp.directive('slideShow', [function() {
 				if (keyCode === 37) {
 				   // Previous
 				   $(".carousel-control.left").click();
-				   console.log('prev');
 				   return false;
 				}
 				if (keyCode === 39) {
 				   // Next
 				   $(".carousel-control.right").click();
-				   console.log('next');
 				   return false;
 				}
 				if (keyCode === 27) {
 					$scope.$parent.closeSlideShow();
 					$scope.$apply();
-					console.log('close');
 					return false;
 				}
 			});
