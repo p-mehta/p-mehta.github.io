@@ -302,6 +302,7 @@ footer .caption {
 .contactSection {
 	min-height: 275px;
 	max-height: 550px;
+	height: auto;
 }
 
 .contactLinks {

@@ -103,12 +103,12 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 		var scrollPos = angular.element($window).scrollTop() + $window.innerHeight/2;
 	    $('section').each(function () {
 	        var currLink = $(this);
-	        /*var contactElem = $('section.contactSection');
+	        var contactElem = $('section.contactSection');
 	        if (contactElem.position().top < scrollPos + contactElem.height() ) { 
         		$('section').removeClass('active');
         		contactElem.addClass('active');
         		setActiveTab('contact');
-    		} else */if (currLink.position().top <= scrollPos && currLink.position().top + currLink.height() > scrollPos) {
+    		} else if (currLink.position().top <= scrollPos && currLink.position().top + currLink.height() > scrollPos) {
 	            $('section').removeClass('active');
 	            currLink.addClass('active');
 	            if (currLink.hasClass('contactSection')) {
@@ -183,7 +183,7 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 			loc: 'location'
 	};
 	
-	$scope.contactComponent = 'email';
+	$scope.contactComponent = '';
 	$scope.showEmail = function() {
 		$scope.contactComponent = 'email';
 	};
@@ -207,7 +207,7 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	
 	var init = function() {
 		$scope.setActive('home');
-		angular.element($window).on('scroll', onScroll);
+//		angular.element($window).on('scroll', onScroll);
 	};
 	
 	init();
