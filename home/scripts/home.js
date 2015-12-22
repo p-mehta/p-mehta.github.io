@@ -5,7 +5,7 @@
  * 
  */
 
-var myApp = angular.module('myApp', ['ui.bootstrap']);
+var myApp = angular.module('myApp', ['ngTouch', 'ui.bootstrap']);
 
 myApp.directive('linkSocial', [function() {
 	return {
