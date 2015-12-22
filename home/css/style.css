@@ -201,7 +201,7 @@ footer .caption {
 
 /* Profile section */
 .profileImg > img {
-	max-width: 50%;
+	max-width: 100%;
 	height: auto;
 	-ms-transform: rotate(-4deg); /* IE 9 */
     -webkit-transform: rotate(-4deg); /* Chrome, Safari, Opera */
@@ -210,14 +210,16 @@ footer .caption {
 	filter: drop-shadow(5px 5px 5px #222);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
 	.profileImg > img {
 		max-width: 100%;
 	}	
-}
+} */
 
-.profileTitle {
-	margin-top: 18%;
+@media (min-width: 768px) {
+	.profileTitle {
+		margin-top: 10%;
+	}
 }
 
 .aboutMe {

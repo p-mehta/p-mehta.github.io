@@ -143,7 +143,6 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 		setActiveTab(tab);
 		$timeout(function() {
 			$('html, body').animate({scrollTop: $('section.active').offset().top }, 'slow', 'swing', function() {
-				window.location.hash = $('section.active');
 				angular.element($window).on('scroll', onScroll);
 			});
 		});
