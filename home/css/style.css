@@ -96,11 +96,11 @@ footer .horizontalLine {
 }
 
 /* Carousel */
-.carousel, .carousel-inner,
+/* .carousel, .carousel-inner,
 .carousel-inner>.item.active, .carousel-inner>.item.next.left, .carousel-inner>.item.prev.right, 
 .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
 	height: inherit;
-}
+} */
 
 .carousel-indicators {
 	/* display: none; */
@@ -363,14 +363,15 @@ ul.contactsList > li {
 	color: #fff;
 	opacity: 0.4;
 	margin: 8px;
+	position: relative;
+}
+
+.close:hover, .close:focus {
+	color: #fff;
 }
 
 .slideShow {
-	opacity: 1;
-	position: fixed;
-	/* top: 6%; */
-	margin: 6% 0;
-	background-color: rgba(34, 34, 34, 0.5);
+	margin-top: 6%;
 }
 
 .slideShow .start, .slideShow .pause {

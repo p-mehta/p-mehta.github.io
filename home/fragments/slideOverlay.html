@@ -1,6 +1,6 @@
 <div class="overlay slideShowContainer">
-    <div class="close" ng-click="close()">X</div>
-    <div class="slideShow fullWidth" style="height: 500px">
+    <div class="close alwaysOnTop" ng-click="close()">X</div>
+    <div class="slideShow" style="height: auto">
         <uib-carousel interval="interval" no-wrap="false" data-keyboard="true">
             <uib-slide ng-repeat="slide in slides">
                 <img ng-src="{{slide.image}}" style="margin:auto;" />
