@@ -86,6 +86,12 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 			contact: false
 	};
 	
+	$scope.showMenu = false;
+	$scope.openMenu = function($event) {
+		$scope.showMenu = !$scope.showMenu;
+		$event.stopPropagation();
+	};
+	
 	var setActiveTab = function(tab) {
 		angular.forEach($scope.activeTab, function(value, key) {
 			if (key == tab) {
@@ -128,6 +134,10 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
     };
 	
 	$scope.setActive = function(tab) {
+		if ($scope.showMenu) {
+			$scope.showMenu = false;
+		}
+		
 		if ($scope.activeTab == tab) { return; }
 		angular.element($window).off('scroll');
 		setActiveTab(tab);
@@ -202,9 +212,17 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 		$scope.contactComponent = 'location';
 	};
 	
+	var onClick = function($event) {
+		if ($scope.showMenu) {
+			$scope.showMenu = false;
+			$event.stopPropagation();
+			$scope.$apply();
+		}
+	};
+	
 	var init = function() {
 		$scope.setActive('home');
-//		angular.element($window).on('scroll', onScroll);
+		angular.element($window).on('click', onClick);
 	};
 	
 	init();

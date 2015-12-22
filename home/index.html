@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, intial-scale=1.0 , maximum-scale=1.0, user-scalable=no" charset="ISO-8859-1">
 <title>Pratik Mehta</title>
 
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
@@ -17,84 +17,105 @@
 
 </head>
 <body ng-controller="mainController" ng-class="{noscroll: showSlideShow}">
-    <header>
-        <div class="navTabs">
+    <header class="container-fluid">
+        <div class="navTabs tabs-lg">
             <uib-tabset justified="true" ng-class="{pageBody: true}">
                 <uib-tab heading="Home" ng-click="setActive('home')" active="activeTab.home"></uib-tab>
-                <uib-tab heading="Work Experience" ng-click="setActive('resume')" active="activeTab.resume"></uib-tab>
-                <uib-tab heading="Adventures & Travels" ng-click="setActive('others')" active="activeTab.others"></uib-tab>
+                <uib-tab heading="Work" ng-click="setActive('resume')" active="activeTab.resume"></uib-tab>
+                <uib-tab heading="Travels" ng-click="setActive('others')" active="activeTab.others"></uib-tab>
                 <uib-tab heading="Contact" ng-click="setActive('contact')" active="activeTab.contact"></uib-tab>
             </uib-tabset>
         </div>
     </header>
-    <section class="homeSection" ng-class="{active: activeTab.home}">
+    <div class="navTabs menu text-right tabs-sm " ng-click="openMenu($event)">
+        <img src="images/icons/menuicon.png" alt="Nav" width="16px" />
+    </div>
+    <div class="navTabs drop-menu floatRight" ng-show="showMenu">
+        <uib-tabset vertical="true" ng-class="{pageBody: true}">
+            <uib-tab heading="Home" ng-click="setActive('home')" active="activeTab.home"></uib-tab>
+            <uib-tab heading="Work" ng-click="setActive('resume')" active="activeTab.resume"></uib-tab>
+            <uib-tab heading="Travels" ng-click="setActive('others')" active="activeTab.others"></uib-tab>
+            <uib-tab heading="Contact" ng-click="setActive('contact')" active="activeTab.contact"></uib-tab>
+        </uib-tabset>
+    </div>
+    <section class="homeSection container-fluid" ng-class="{active: activeTab.home}">
         <div class="pageBody details">
-            <div class="profile">
-                <div class="profileImg floatLeft fullHeight">
+            <div class="profile row">
+                <div class="profileImg col-md-3">
                     <img ng-src="images/me.png" />
                 </div>
-                <div class="profileTitle floatLeft">
+                <div class="profileTitle col-md-9">
                     <h1>Pratik Mehta</h1>
                     <h4>Front-end Developer</h4>
                 </div>
             </div>
-            <div class="description aboutMe">
-                <p>I'm a software engineer based in Sunnyvale, CA, specialising in web design and development, with a Master's degree in Computer Science from USC.</p>
-                <h4>Tech Skills</h4>
-                <p>Proficient in web technologies like AngularJS, JavaScript, HTML, CSS and JQuery. Also familiar with programming languages like Java and C++.</p>
-                <h4>Pass-Time</h4>
-                <p>When not coding, I watch movies and tv shows, hang out over chilled beer enjoying bowling, bocce ball, pool and more...</p>
-            </div>
-        </div>
-    </section>
-    <section class="resumeSection" ng-class="{active: activeTab.resume}">
-        <div class="pageBody resume details">
-            <div class="description">
-                <h2>Work Experience</h2>
-                <ul>
-                    <li>Sr. Software Engineer - Imagine Communications <span class="subTitle">(formerly RGB Networks Inc.)</span></li>
-                    <span class="subText"> Application development using AngularJS, HTML, CSS, Java<br> Key Projects:<br>
-                        <ul>
-                            <li>BeeHive - a distributed cluster management and resource allocation system</li>
-                            <li>FvteHive - leverage BeeHive for fragmented, longer-than-real-time transcoded, high-quality video delivery</li>
-                            <li>POIS - an eco-system to configure and manage placement opportunity and blackout ads</li>
-                        </ul>
-                    </span>
-                    <li>Sr. Software Engineer - RGB Networks Inc.<br>Software Engineer - RGB Networks Inc.
-                    </li>
-                    <span class="subText"> GUI development using JavaScript, JQuery, HTML, CSS, Java<br> Key Projects:<br>
-                        <ul>
-                            <li>Video Multiprocessing Gateway - a platform for the delivery of advanced video services</li>
-                            <li>Director - a legacy cluster manager for configuring and monitoring different types of nodes and channels</li>
-                        </ul>
-                    </span>
-                    <li>QA Analyst - Beta Soft Systems <span class="subText">(Client: Assurant Specialty Group)</span></li>
-                    <span class="subText"> Manual testing and developed automation test scripts using QuickTest Professional<br> Key
-                        Project:<br>
-                        <ul>
-                            <li>TrackAll v1.5 - a legacy system to track property insurance policies for clients</li>
-                        </ul>
-                    </span>
-                </ul>
-                <div class="resumeLink">
-                    For additional work experiences and other details, please visit <link-social ng-model="type.li" sml="true"></link-social>
+            <div class="row">
+                <div class="description aboutMe col-md-9 col-md-offset-3">
+                    <p>I'm a software engineer based in Sunnyvale, CA, specialising in web design and development, with a Master's degree in Computer Science from USC.</p>
+                    <h4>Tech Skills</h4>
+                    <p>Proficient in web technologies like AngularJS, JavaScript, HTML, CSS and JQuery. Also familiar with programming languages like Java and C++.</p>
+                    <h4>Pass-Time</h4>
+                    <p>When not coding, I watch movies and tv shows, hang out over chilled beer enjoying bowling, bocce ball, pool and more...</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="othersSection" ng-class="{active: activeTab.others}">
+    <section class="resumeSection container-fluid" ng-class="{active: activeTab.resume}">
+        <div class="pageBody resume details">
+            <div class="row">
+                <div class="description col-md-12">
+                    <h2>Work Experience</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul>
+                        <li>Sr. Software Engineer - Imagine Communications <span class="subTitle">(formerly RGB Networks Inc.)</span></li>
+                        <span class="subText"> Application development using AngularJS, HTML, CSS, Java<br> Key Projects:<br>
+                            <ul>
+                                <li>BeeHive - a distributed cluster management and resource allocation system</li>
+                                <li>FvteHive - leverage BeeHive for fragmented, longer-than-real-time transcoded, high-quality video delivery</li>
+                                <li>POIS - an eco-system to configure and manage placement opportunity and blackout ads</li>
+                            </ul>
+                        </span>
+                        <li>Sr. Software Engineer - RGB Networks Inc.<br>Software Engineer - RGB Networks Inc.
+                        </li>
+                        <span class="subText"> GUI development using JavaScript, JQuery, HTML, CSS, Java<br> Key Projects:<br>
+                            <ul>
+                                <li>Video Multiprocessing Gateway - a platform for the delivery of advanced video services</li>
+                                <li>Director - a legacy cluster manager for configuring and monitoring different types of nodes and channels</li>
+                            </ul>
+                        </span>
+                        <li>QA Analyst - Beta Soft Systems <span class="subText">(Client: Assurant Specialty Group)</span></li>
+                        <span class="subText"> Manual testing and developed automation test scripts using QuickTest Professional<br> Key
+                            Project:<br>
+                            <ul>
+                                <li>TrackAll v1.5 - a legacy system to track property insurance policies for clients</li>
+                            </ul>
+                        </span>
+                    </ul>
+                    <div class="resumeLink">
+                        For additional work experiences and other details, please visit <link-social ng-model="type.li" sml="true"></link-social>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="othersSection container-fluid" ng-class="{active: activeTab.others}">
         <div class="pageBody details">
-            <div class="description">
-                <h3>Adventures & Travels</h3>
-                <div class="albumRow">
-                    <div class="albumCol" ng-click="showAlbum('antelopecnyn')" >
-                        <img class="albumImg" src="images/album/antelopecnyn_tn_c.png" />
-                        <div class="albumTitle">Antelope Canyon, AZ</div>
-                    </div>
-                    <div class="albumCol" ng-click="showAlbum('norway')" >
-                        <img class="albumImg" src="images/album/norway_tn_c.png" />
-                        <div class="albumTitle">Norway</div>
-                    </div>
+            <div class="row">
+                <div class="description col-md-12">
+                    <h3>Travels & Adventures</h3>
+                </div>
+            </div>
+            <div class="albumRow row">
+                <div class="albumCol col-md-3" ng-click="showAlbum('antelopecnyn')" >
+                    <img class="albumImg" src="images/album/antelopecnyn_tn_c.png" />
+                    <div class="albumTitle">Antelope Canyon, AZ</div>
+                </div>
+                <div class="albumCol col-md-3" ng-click="showAlbum('norway')" >
+                    <img class="albumImg" src="images/album/norway_tn_c.png" />
+                    <div class="albumTitle">Norway</div>
                 </div>
             </div>
         </div>
@@ -102,11 +123,15 @@
             <slide-show slides="currAlbum"></slide-show>
         </div>
     </section>
-    <section class="contactSection" ng-class="{active: activeTab.contact}">
+    <section class="contactSection container-fluid" ng-class="{active: activeTab.contact}">
         <div class="pageBody details">
-            <div class="description">
-                <h3>Contact</h3>
-                <div class="floatLeft">
+            <div class="row">
+                <div class="description col-md-12">
+                    <h3>Contact</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
                     <ul class="contactsList">
                         <!-- <li><link-social ng-model="type.loc"></link-social></li> -->
                         <!-- <li><link-social ng-model="type.gm"></link-social></li> -->
@@ -114,31 +139,34 @@
                         <li><link-social ng-model="type.fb"></link-social></li>
                     </ul>
                 </div>
-                <div class="clearfloat"></div>
-                <!-- <div class="marker">&#x25BE;</div>
-                <div class="clearfloat"></div> -->
-                <div class="floatLeft locationInfo" ng-show="contactComponent == 'location'">
-                    Sunnyvale, CA
-                </div>
-                <div class="clearfloat"></div>
-                <div class="floatLeft emailForm" ng-show="contactComponent == 'email'">
-                    <div class="emailFrom">
-                        <input type="text" placeholder="Name" ng-model="email.name"/>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- <div class="marker">&#x25BE;</div>
+                    <div class="clearfloat"></div> -->
+                    <div class="floatLeft locationInfo" ng-show="contactComponent == 'location'">
+                        Sunnyvale, CA
                     </div>
-                    <div class="emailSubject">
-                        <input type="text" placeholder="Subject" ng-model="email.subject"/>
-                    </div>
-                    <div class="emailBody">
-                        <textarea row="5" column="20" ng-model="email.body"></textarea>
-                    </div>
-                    <div class="emailAction floatRight">
-                        <button type="submit" ng-click="sendEmail()">Send</button>
+                    <div class="clearfloat"></div>
+                    <div class="floatLeft emailForm" ng-show="contactComponent == 'email'">
+                        <div class="emailFrom">
+                            <input type="text" placeholder="Name" ng-model="email.name"/>
+                        </div>
+                        <div class="emailSubject">
+                            <input type="text" placeholder="Subject" ng-model="email.subject"/>
+                        </div>
+                        <div class="emailBody">
+                            <textarea row="5" column="20" ng-model="email.body"></textarea>
+                        </div>
+                        <div class="emailAction floatRight">
+                            <button type="submit" ng-click="sendEmail()">Send</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer>
+    <footer class="container-fluid">
         <div class="horizontalLine closing"></div>
         <div class="caption closing">Developed using AngularJS v1.4.8 and Bootstrap UI v0.14.3</div>
     </footer>
