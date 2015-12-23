@@ -75,6 +75,32 @@ myApp.directive('slideShow', [function() {
 	};
 }]);
 
+myApp.directive('onInvisible', ['$timeout', function($timeout) {
+	return {
+	    restrict: 'A',
+	    link: function($scope, elem, attrs) {
+//	    	var checkVisibility = function() {
+//				if (element('.value-entry select').css('display') == 'none') {
+//					console.log('onInvisible');
+//					$scope.$parent.showMenu = false;
+//				} else {
+//					$timeout(checkVisibility, 100);
+//				}
+//	    	};
+//	    	$timeout(checkVisibility, 100);
+	    	
+	    	$scope.$watch(function() {
+	    		return elem.css('display');
+	    	}, function(newVal, oldVal) {
+	    		if (newVal != oldVal && newVal == 'none') {
+					console.log('onInvisible');
+					$scope.$parent.showMenu = false;
+				}
+	    	});
+	    }
+    };
+}]);
+
 myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter', '$window',
                                     function($scope, $location, $timeout, $filter, $window) {
 	$scope.message = 'Dev in progress...';
@@ -87,8 +113,18 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	};
 	
 	$scope.showMenu = false;
-	$scope.openMenu = function($event) {
+	$scope.toggleMenu = function($event) {
 		$scope.showMenu = !$scope.showMenu;
+		$event.stopPropagation();
+	};
+	
+	$scope.openMenu = function($event) {
+		$scope.showMenu = true;
+		$event.stopPropagation();
+	};
+	
+	$scope.closeMenu = function($event) {
+		$scope.showMenu = false;
 		$event.stopPropagation();
 	};
 	

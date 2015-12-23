@@ -145,18 +145,47 @@ footer .caption {
 	top: 1%;
 	padding: 4px;
 	z-index: 99;
+	-moz-transition: right 0.5s;
+	-webkit-transition: right 0.5s;
+    transition: right 0.5s;
 }
 
-.navTabs.drop-menu {
+.navTabs.sidebarMenu {
 	border-left: 1px solid #fff;
-	border-top: 1px solid #fff;
+	/* border-top: 1px solid #fff;
 	border-bottom: 1px solid #fff;
-	border-radius: 5px 0px 0px 5px;
+	border-radius: 5px 0px 0px 5px; */
 	position: fixed;
 	right: 0;
-	top: calc(1% + 30px);
+	top: 0;
+	width: 0px;
+	height: 100%;
 	z-index: 99;
-	
+	-moz-transition: width 0.5s;
+	-webkit-transition: width 0.5s;
+    transition: width 0.5s;
+}
+
+.navTabs.sidebarMenu .pageBody {
+	border-top: 1px solid #ddd;
+	border-left: none !important;
+	border-right: none !important;
+	border-bottom: none !important;
+	margin-top: 40px;
+}
+
+.navTabs.menu.show {
+	right: 34.8%;
+	-moz-transition: right 0.5s;
+	-webkit-transition: right 0.5s;
+    transition: right 0.5s;
+}
+
+.navTabs.sidebarMenu.show {
+	width: 35%;
+	-moz-transition: width 0.5s;
+	-webkit-transition: width 0.5s;
+    transition: width 0.5s;
 }
 
 .navTabs.menu:hover {
@@ -178,6 +207,7 @@ footer .caption {
 .nav-tabs {
 	background: none;
 	border: none !important;
+	border-top: 1px solid #ddd;
 }
 
 .nav-tabs>li>a, .nav-tabs>li>a:hover {
@@ -197,6 +227,12 @@ footer .caption {
 .nav-tabs>li.active>a, .nav-tabs>li>a:focus, .nav-tabs>li.active>a:focus {
 	background: none;
 	border: none !important;
+}
+
+.profileLogo {
+	width: 100%;
+	text-align: left;
+	padding: 12px 15px;
 }
 
 /* Profile section */

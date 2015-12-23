@@ -28,16 +28,21 @@
             </uib-tabset>
         </div>
     </header>
-    <div class="navTabs menu text-right tabs-sm " ng-click="openMenu($event)">
-        <img src="images/icons/menuicon.png" alt="Nav" width="16px" />
-    </div>
-    <div class="navTabs drop-menu floatRight" ng-show="showMenu">
-        <uib-tabset vertical="true" ng-class="{pageBody: true}">
-            <uib-tab heading="Home" ng-click="setActive('home')" active="activeTab.home"></uib-tab>
-            <uib-tab heading="Work" ng-click="setActive('resume')" active="activeTab.resume"></uib-tab>
-            <uib-tab heading="Travels" ng-click="setActive('others')" active="activeTab.others"></uib-tab>
-            <uib-tab heading="Contact" ng-click="setActive('contact')" active="activeTab.contact"></uib-tab>
-        </uib-tabset>
+    <div class="tabs-sm" on-invisible ng-swipe-left="openMenu($event)" ng-swipe-right="closeMenu($event)">
+        <div class="navTabs sidebarMenu floatRight" ng-class="{show: showMenu}">
+            <!-- <div class="profileLogo">
+                <img src="images/logos/favicon.png" />
+            </div> -->
+            <uib-tabset vertical="true" ng-class="{pageBody: true}">
+                <uib-tab heading="Home" ng-click="setActive('home')" active="activeTab.home"></uib-tab>
+                <uib-tab heading="Work" ng-click="setActive('resume')" active="activeTab.resume"></uib-tab>
+                <uib-tab heading="Travels" ng-click="setActive('others')" active="activeTab.others"></uib-tab>
+                <uib-tab heading="Contact" ng-click="setActive('contact')" active="activeTab.contact"></uib-tab>
+            </uib-tabset>
+        </div>
+        <div class="navTabs menu text-right" ng-class="{show: showMenu}" ng-click="toggleMenu($event)">
+            <img src="images/icons/menuicon.png" alt="Nav" width="16px" />
+        </div>
     </div>
     <section class="homeSection container-fluid" ng-class="{active: activeTab.home}">
         <div class="pageBody details">
