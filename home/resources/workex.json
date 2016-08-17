@@ -1,0 +1,98 @@
+[
+    {
+        "company": "Nimble Storage",
+        "companyNotes": "",
+        "title": [
+            {
+                "title": "Sr. Software Engineer",
+                "endYear": 2016
+            }
+        ],
+        "clients": [],
+        "summary": "Web GUI development for infrastructure and tools using AngularJS, HTML5, CSS",
+        "projects": [
+            {
+                "name": "Zeus",
+                "description": "an application and infrastructure to execute and track automated test-suites for release and project builds"
+            },
+            {
+                "name": "Validated Configuration Matrix",
+                "description": "a tool to list the support and compatibility configuration for Nimble products"
+            }
+        ],
+        "endYear": 2016
+    },
+    {
+        "company": "Imagine Communications",
+        "companyNotes": "formerly RGB Networks",
+        "title": [
+            {
+                "title": "Sr. Software Engineer",
+                "endYear": 2016
+            }
+        ],
+        "clients": [],
+        "summary": "Application development using AngularJS, HTML5, CSS, Java",
+        "projects": [
+            {
+                "name": "BeeHive",
+                "description": "a distributed cluster management and resource allocation system"
+            },
+            {
+                "name": "FcteHive",
+                "description": "leverage BeeHive for fragmented, longer-than-real-time transcoded, high-quality video delivery"
+            },
+            {
+                "name": "POIS",
+                "description": "an eco-system to configure and manage placement opportunity and blackout ads"
+            }
+        ],
+        "endYear": 2016
+    },
+    {
+        "company": "RGB Networks Inc.",
+        "companyNotes": "",
+        "title": [
+            {
+                "title": "Sr. Software Engineer",
+                "endYear": 2015
+            },
+            {
+                "title": "Software Engineer",
+                "endYear": 2014
+            }
+        ],
+        "clients": [],
+        "summary": "GUI development using JavaScript, JQuery, HTML, CSS, Java",
+        "projects": [
+            {
+                "name": "Video Multiprocessing Gateway",
+                "description": "a platform for the delivery of advanced video services"
+            },
+            {
+                "name": "Director",
+                "description": "a legacy cluster manager for configuring and monitoring different types of nodes and channels"
+            }
+        ],
+        "endYear": 2015
+    },
+    {
+        "company": "Beta Soft Systems",
+        "companyNotes": "",
+        "title": [
+            {
+                "title": "QA Analyst",
+                "endYear": 2012
+            }
+        ],
+        "clients": ["Assurant Specialty Group"],
+        "summary": "Manual testing and developed automation test scripts using QuickTest Professional",
+        "projects": [
+            {
+                "name": "TrackAll v1.5",
+                "description": "a legacy system to track property insurance policies for clients"
+            }
+        ],
+        "endYear": 2012
+    }
+]
