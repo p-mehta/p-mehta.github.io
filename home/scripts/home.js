@@ -101,8 +101,8 @@ myApp.directive('onInvisible', ['$timeout', function($timeout) {
     };
 }]);
 
-myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter', '$window',
-                                    function($scope, $location, $timeout, $filter, $window) {
+myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter', '$window', '$http',
+                                    function($scope, $location, $timeout, $filter, $window, $http) {
 	$scope.message = 'Dev in progress...';
 	
 	$scope.activeTab = {
@@ -167,7 +167,7 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	        }
 	        $scope.$apply();
 	    });
-    };
+        };
 	
 	$scope.setActive = function(tab) {
 		if ($scope.showMenu) {
@@ -184,6 +184,16 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 		});
 	};
     
+        $scope.workEx = [];
+        $scope.getWorkEx = function() {
+            $http.get('/resources/workex.json')
+            .success(function(data) {
+                if (data && data.length) {
+                    $scope.workEx = [].concat(data);
+                }
+            });
+        };
+
 	$scope.albums = [
 	                 { name: 'norway', images: [
 	                                        { image: 'images/album/norway/norway_img1.png'},
@@ -258,6 +268,10 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	var init = function() {
 		$scope.setActive('home');
 		angular.element($window).on('click', onClick);
+
+                if ($scope.workEx.length <= 0) {
+                    $scope.getWorkEx();
+                }
 	};
 	
 	init();

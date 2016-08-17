@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-<meta name="viewport" content="width=device-width, intial-scale=1.0 , maximum-scale=1.0, user-scalable=no" charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0, user-scalable=no" charset="ISO-8859-1">
 <title>Pratik Mehta</title>
 
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
@@ -76,29 +76,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li>Sr. Software Engineer - Imagine Communications <span class="subTitle">(formerly RGB Networks Inc.)</span></li>
-                        <span class="subText"> Application development using AngularJS, HTML5, CSS, Java<br> Key Projects:<br>
-                            <ul>
-                                <li>BeeHive - a distributed cluster management and resource allocation system</li>
-                                <li>FvteHive - leverage BeeHive for fragmented, longer-than-real-time transcoded, high-quality video delivery</li>
-                                <li>POIS - an eco-system to configure and manage placement opportunity and blackout ads</li>
-                            </ul>
-                        </span>
-                        <li>Sr. Software Engineer - RGB Networks Inc.<br>Software Engineer - RGB Networks Inc.
+                        <li ng-repeat="ex in workEx | orderBy: '-endYear'">
+                            <div ng-repeat="title in ex.title | orderBy: '-endYear'">
+                                {{title.title}} - {{ex.company}} 
+                                <span class="subTitle" ng-if="ex.companyNotes && ex.companyNotes.length">({{ex.companyNotes}})</span>
+                                <span class="subText" ng-if="ex.clients && ex.clients.length">(Client: {{ex.clients.join(', ')}})</span>
+                            </div>
+                            <div class="subText"> {{ex.summary}}<br> Key Projects:<br>
+                                <ul>
+                                    <li ng-repeat="project in ex.projects">{{project.name}} - {{project.description}}</li>
+                                </ul>
+                            </div>
                         </li>
-                        <span class="subText"> GUI development using JavaScript, JQuery, HTML, CSS, Java<br> Key Projects:<br>
-                            <ul>
-                                <li>Video Multiprocessing Gateway - a platform for the delivery of advanced video services</li>
-                                <li>Director - a legacy cluster manager for configuring and monitoring different types of nodes and channels</li>
-                            </ul>
-                        </span>
-                        <li>QA Analyst - Beta Soft Systems <span class="subText">(Client: Assurant Specialty Group)</span></li>
-                        <span class="subText"> Manual testing and developed automation test scripts using QuickTest Professional<br> Key
-                            Project:<br>
-                            <ul>
-                                <li>TrackAll v1.5 - a legacy system to track property insurance policies for clients</li>
-                            </ul>
-                        </span>
                     </ul>
                     <div class="resumeLink">
                         For additional work experiences and other details, please visit <link-social ng-model="type.li" sml="true"></link-social>
