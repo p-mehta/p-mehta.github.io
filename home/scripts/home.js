@@ -186,7 +186,7 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
     
         $scope.workEx = [];
         $scope.getWorkEx = function() {
-            $http.get('/resources/workex.json')
+            $http.get('resources/workex.json')
             .success(function(data) {
                 if (data && data.length) {
                     $scope.workEx = [].concat(data);
