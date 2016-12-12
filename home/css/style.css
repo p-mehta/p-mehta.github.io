@@ -3,7 +3,7 @@
 /* General */
 body {
 	font-size: 10pt;
-	background-image: url('/images/bg/nice_snow_black.png');
+	background-image: url('../images/bg/nice_snow_black.png');
 	color: #efefef;
 }
 
@@ -249,7 +249,7 @@ footer .caption {
 .aboutSection {
         justify-content: flex-end;
         align-items: center;
-        background: #fff url("/images/bg/profile_bg5.png") left no-repeat border-box;
+        background: #fff url("../images/bg/profile_bg5.png") left no-repeat border-box;
 }
 
 .profileLogo {
@@ -296,7 +296,7 @@ footer .caption {
 }
 /* Resume section */
 .resumeSection {
-        background: #FFF url("/images/bg/work_ex_code_blue_bg_dark.png") no-repeat center border-box;
+        background: #FFF url("../images/bg/work_ex_code_blue_bg_dark.png") no-repeat center border-box;
 	background-size: cover;
 }
 
@@ -308,7 +308,7 @@ footer .caption {
 }
 
 .resumeSection::before {
-	background: #FFF url("/images/bg/work_ex_code_blue_bg.jpg") no-repeat center fixed border-box;
+	background: #FFF url("../images/bg/work_ex_code_blue_bg.jpg") no-repeat center fixed border-box;
 	background-size: cover;
 	opacity: 0.25;
 	content: ' ';
@@ -347,7 +347,7 @@ footer .caption {
 
 /* Album section */
 .othersSection {
-        background: #FFF url("/images/bg/travels_snow_bg.png") no-repeat center border-box;
+        background: #FFF url("../images/bg/travels_snow_bg.png") no-repeat center border-box;
 	background-size: cover;
 	padding-top: 30px;
 	color: #333;
