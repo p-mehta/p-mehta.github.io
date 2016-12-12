@@ -6,79 +6,50 @@
 
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.6.3/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 <script type="text/javascript" src="lib/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="lib/js/jquery-ui-1.11.4.min.js"></script>
 <script type="text/javascript" src="lib/js/angular.min.js"></script>
 <script type="text/javascript" src="lib/js/angular-touch.min.js"></script>
+<script type="text/javascript" src="lib/js/angular-animate.js"></script>
 <script type="text/javascript" src="lib/js/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
 <script type="text/javascript" src="scripts/home.js"></script>
 
 </head>
 <body ng-controller="mainController" ng-class="{noscroll: showSlideShow}">
-    <header class="container-fluid">
-        <div class="navTabs tabs-lg">
-            <uib-tabset justified="true" ng-class="{pageBody: true}">
-                <uib-tab heading="Home" ng-click="setActive('home')" active="activeTab.home"></uib-tab>
-                <uib-tab heading="Work" ng-click="setActive('resume')" active="activeTab.resume"></uib-tab>
-                <uib-tab heading="Travels" ng-click="setActive('others')" active="activeTab.others"></uib-tab>
-                <uib-tab heading="Contact" ng-click="setActive('contact')" active="activeTab.contact"></uib-tab>
-            </uib-tabset>
+    <header class="siteHeader container-fluid">
+        <div class="pageBody details">
+            <div class="homeName">Pratik Mehta</div>
+            <h2 class="homeTitle">web developer</h2>
         </div>
     </header>
-    <div class="tabs-sm" on-invisible ng-swipe-left="openMenu($event)" ng-swipe-right="closeMenu($event)">
-        <div class="navTabs sidebarMenu floatRight" ng-class="{show: showMenu}">
-            <!-- <div class="profileLogo">
-                <img src="images/logos/favicon.png" />
-            </div> -->
-            <uib-tabset vertical="true" ng-class="{pageBody: true}">
-                <uib-tab heading="Home" ng-click="setActive('home')" active="activeTab.home"></uib-tab>
-                <uib-tab heading="Work" ng-click="setActive('resume')" active="activeTab.resume"></uib-tab>
-                <uib-tab heading="Travels" ng-click="setActive('others')" active="activeTab.others"></uib-tab>
-                <uib-tab heading="Contact" ng-click="setActive('contact')" active="activeTab.contact"></uib-tab>
-            </uib-tabset>
-        </div>
-        <div class="navTabs menu text-right" ng-class="{show: showMenu}" ng-click="toggleMenu($event)">
-            <img src="images/icons/menuicon.png" alt="Nav" width="16px" />
-        </div>
-    </div>
-    <section class="homeSection container-fluid" ng-class="{active: activeTab.home}">
-        <div class="pageBody details">
-            <div class="profile row">
-                <div class="profileImg col-xs-6 col-md-3">
-                    <img ng-src="images/me.png" />
-                </div>
-                <div class="profileTitle col-xs-6 col-md-9">
-                    <h1>Pratik Mehta</h1>
-                    <h4>Front-end Developer</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="description aboutMe col-md-9 col-md-offset-3">
+    <section class="aboutSection container-fluid" ng-class="{active: activeTab.about}">
+        <div class="pageBody details aboutDetails col-lg-8 col-md-8 col-sm-10 col-xs-12">
+            <div class="profile">
+                <div class="description aboutMe">
                     <p>I'm a software engineer based in Sunnyvale, CA, specialising in web design and development, with a Master's degree in Computer Science from USC.</p>
-                    <h4>Tech Skills</h4>
                     <p>Proficient in web technologies like AngularJS, Bootstrap, JavaScript, HTML5, CSS and JQuery. Also familiar with programming languages like Java and C++.</p>
-                    <h4>Pass-Time</h4>
-                    <p>When not coding, I watch movies and tv shows, hang out over chilled beer enjoying bowling, bocce ball, pool and more...</p>
+                    <p>When not coding, I watch movies and tv shows, enjoy activities like bowling, bocce ball and pool, and hang out over chilled beer. I enjoy the outdoors, going hiking and camping, and have recently taken up snowboarding.</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="resumeSection container-fluid" ng-class="{active: activeTab.resume}">
         <div class="pageBody resume details">
-            <div class="row">
-                <div class="description col-md-12">
+            <div>
+                <div class="description">
                     <h2>Work Experience</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
+            <div>
+                <div class="">
                     <ul>
                         <li ng-repeat="ex in workEx | orderBy: '-endYear'">
                             <div ng-repeat="title in ex.title | orderBy: '-endYear'">
-                                {{title.title}} - {{ex.company}} 
+                                <span class="title">{{title.title}} - {{ex.company}}</span>
                                 <span class="subTitle" ng-if="ex.companyNotes && ex.companyNotes.length">({{ex.companyNotes}})</span>
                                 <span class="subText" ng-if="ex.clients && ex.clients.length">(Client: {{ex.clients.join(', ')}})</span>
                             </div>
@@ -98,17 +69,17 @@
     </section>
     <section class="othersSection container-fluid" ng-class="{active: activeTab.others}">
         <div class="pageBody details">
-            <div class="row">
+            <div>
                 <div class="description col-md-12">
-                    <h3>Travels & Adventures</h3>
+                    <h2>Travels & Adventures</h2>
                 </div>
             </div>
-            <div class="albumRow row">
-                <div class="albumCol col-md-3" ng-click="showAlbum('antelopecnyn')" >
+            <div class="albumRow">
+                <div class="albumCol col-md-4 col-sm-4 col-xs-6" ng-click="showAlbum('antelopecnyn')" >
                     <img class="albumImg" src="images/album/antelopecnyn_tn_c.png" />
                     <div class="albumTitle">Antelope Canyon, AZ</div>
                 </div>
-                <div class="albumCol col-md-3" ng-click="showAlbum('norway')" >
+                <div class="albumCol col-md-4 col-sm-4 col-xs-6" ng-click="showAlbum('norway')" >
                     <img class="albumImg" src="images/album/norway_tn_c.png" />
                     <div class="albumTitle">Norway</div>
                 </div>
@@ -120,12 +91,12 @@
     </section>
     <section class="contactSection container-fluid" ng-class="{active: activeTab.contact}">
         <div class="pageBody details">
-            <div class="row">
+            <div>
                 <div class="description col-md-12">
-                    <h3>Contact</h3>
+                    <h2>Contact</h2>
                 </div>
             </div>
-            <div class="row">
+            <div>
                 <div class="col-md-12">
                     <ul class="contactsList">
                         <!-- <li><link-social ng-model="type.loc"></link-social></li> -->
@@ -135,7 +106,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
+            <div>
                 <div class="col-md-12">
                     <!-- <div class="marker">&#x25BE;</div>
                     <div class="clearfloat"></div> -->

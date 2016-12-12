@@ -75,5 +75,24 @@
             }
         ],
         "endYear": 2015
+    },
+    {
+        "company": "Beta Soft Systems",
+        "companyNotes": "",
+        "title": [
+            {
+                "title": "QA Analyst",
+                "endYear": 2012
+            }
+        ],
+        "clients": ["Assurant Specialty Group"],
+        "summary": "Manual testing and developed automation test scripts using QuickTest Professional",
+        "projects": [
+            {
+                "name": "TrackAll v1.5",
+                "description": "a legacy system to track property insurance policies for clients"
+            }
+        ],
+        "endYear": 2012
     }
 ]

@@ -3,36 +3,34 @@
 /* General */
 body {
 	font-size: 10pt;
-	background-color: #ddd;
+	background-image: url('/images/bg/nice_snow_black.png');
+	color: #efefef;
 }
 
-header {
-	position: fixed;
-	width: 100%;
-	z-index: 99;
+header, section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+	padding: 50px 0px;
+        /*border-bottom: thin solid lightgray;*/
 }
-
-header.container-fluid {
-	padding: 0px;
-}
-
-/* @media (max-width: 768px) {
-	header {
-		width: auto;
-	}
-} */
 
 section {
-	min-height: 550px;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	background-image: linear-gradient(to bottom, #ddd 0px, #e6e6e6 100%);
+	min-height: 500px;
+        flex-direction: row;
+        justify-content: flex-start;
+}
+
+@media (max-width: 786px) {
+    section {
+        height: auto;
+    }
 }
 
 footer {
 	height: 30px;
-	background-color: #e6e6e6;
-	color: lightslategrey;
+	color: #333;
 }
 
 button {
@@ -77,13 +75,13 @@ button:focus {
 }
 
 .horizontalLine {
-	border-bottom: 1px solid lightslategray;
+	border-bottom: 1px solid #efefef;
 	margin: 5px 0 8px;
 	clear: both;
 }
 
 footer .horizontalLine {
-	border-color: #fff;
+	border-color: #333;
 	margin: 0 0 8px;
 }
 
@@ -112,9 +110,9 @@ footer .horizontalLine {
 	height: 100%;
 }
 
-@media (min-width: 768px) {
-	.pageBody {
-		margin: 0 20%;
+@media (min-width: 1024px) {
+	.pageBody:not(.aboutDetails) {
+		margin-left: 20%;
 	}
 }
 
@@ -229,13 +227,37 @@ footer .caption {
 	border: none !important;
 }
 
+/* Home Section */
+.homeSection, .homeSection > .pageBody {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeName {
+    font-size: 5em;
+    font-style: italic;
+}
+
+.homeTitle {
+    margin: 0px;
+}
+
+/* Profile section */
+.aboutSection {
+        justify-content: flex-end;
+        align-items: center;
+        background: #fff url("/images/bg/profile_bg5.png") left no-repeat border-box;
+}
+
 .profileLogo {
 	width: 100%;
 	text-align: left;
 	padding: 12px 15px;
 }
 
-/* Profile section */
 .profileImg > img {
 	max-width: 100%;
 	height: auto;
@@ -267,27 +289,70 @@ footer .caption {
 	margin-bottom: 0px;
 }
 
+.aboutMe > p {
+	font-size: 1.22em;
+	line-height: 1.5em;
+        margin-bottom: 16px;
+}
 /* Resume section */
-.resume>.description>ul>li {
+.resumeSection {
+        background: #FFF url("/images/bg/work_ex_code_blue_bg_dark.png") no-repeat center border-box;
+	background-size: cover;
+}
+
+/*
+.resumeSection {
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+}
+
+.resumeSection::before {
+	background: #FFF url("/images/bg/work_ex_code_blue_bg.jpg") no-repeat center fixed border-box;
+	background-size: cover;
+	opacity: 0.25;
+	content: ' ';
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: block;
+}
+*/
+
+.resume > .description > ul > li {
 	font-weight: bold;
 }
 
 .resumeLink {
-	font-size: 9pt;
+	font-size: 0.9em;
 	float: left;
 	margin: 4px 0px;
 }
 
+.title {
+	font-size: 1.25em;
+}
+
 .subTitle {
 	font-style: italic;
-	font-size: 9pt;
+	font-size: 0.8em;
 }
 
 .subText {
-	font-size: 9pt;
+	font-size: 0.9em;
 }
 
 /* Album section */
+.othersSection {
+        background: #FFF url("/images/bg/travels_snow_bg.png") no-repeat center border-box;
+	background-size: cover;
+	padding-top: 30px;
+	color: #333;
+}
+
 .albumContainer {
 	width: 100%;
 }
@@ -304,7 +369,11 @@ footer .caption {
 	max-width: 100%;
 	margin: 8px;
 	padding: 0px;
-	border: 8px solid #eee;
+	/*border: 8px solid #eee;*/
+}
+
+.albumCol:hover {
+	cursor: pointer;
 }
 
 .albumImg {
@@ -314,17 +383,24 @@ footer .caption {
 
 .albumTitle {
 	font-weight: bold;
-	background-color: #eee;
+	opacity: 0;
+	/*background-color: #eee;*/
+	-moz-transition: opacity 1s linear;
+	-webkit-transition: opacity 1s linear;
+	transition: opacity 1s linear;
+}
+
+.albumCol:hover .albumTitle {
+	opacity: 1;
+	-moz-transition: opacity 1s linear;
+	-webkit-transition: opacity 1s linear;
+	transition opacity 1s linear;
 }
 
 .albumCol:hover .albumImg {
 	-moz-transform: rotate(0deg);
 	-webkit-transform: rotate(0deg);
 	transform: rotate(0deg);
-}
-
-.albumCol:hover {
-	cursor: pointer;
 }
 
 .albumCol:hover .albumImg {
@@ -426,3 +502,4 @@ ul.contactsList > li {
 	cursor: pointer;
 	opacity: 1.0;
 }
+

@@ -5,7 +5,7 @@
  * 
  */
 
-var myApp = angular.module('myApp', ['ngTouch', 'ui.bootstrap']);
+var myApp = angular.module('myApp', ['ngTouch', 'ngAnimate', 'ui.bootstrap']);
 
 myApp.directive('linkSocial', [function() {
 	return {
@@ -139,7 +139,14 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 	};
 	
 	var onScroll = function() {
-		var scrollPos = angular.element($window).scrollTop() + $window.innerHeight/2;
+            var scrollPos = angular.element($window).scrollTop();
+            console.log('scrollPos: ' + scrollPos);
+            var newHeight = angular.element('header').height() - scrollPos;
+            angular.element('header').height(newHeight);
+        };
+/*
+	var onScroll = function() {
+            var scrollPos = angular.element($window).scrollTop() + $window.innerHeight/2;
 	    $('section').each(function () {
 	        var currLink = $(this);
 	        var contactElem = $('section.contactSection');
@@ -183,7 +190,8 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 			});
 		});
 	};
-    
+*/
+
         $scope.workEx = [];
         $scope.getWorkEx = function() {
             $http.get('resources/workex.json')
@@ -194,27 +202,30 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
             });
         };
 
-	$scope.albums = [
-	                 { name: 'norway', images: [
-	                                        { image: 'images/album/norway/norway_img1.png'},
-	                                        { image: 'images/album/norway/norway_img2.png'},
-	                                        { image: 'images/album/norway/norway_img3.png'},
-	                                        { image: 'images/album/norway/norway_img4.png'},
-	                                        { image: 'images/album/norway/norway_img5.png'},
-	                                        { image: 'images/album/norway/norway_img6.png'},
-	                                        { image: 'images/album/norway/norway_img7.png'},
-	                                        { image: 'images/album/norway/norway_img8.png'},
-	                                        { image: 'images/album/norway/norway_img9.png'},
-	                                        ] },
-                    { name: 'antelopecnyn', images: [
-                                               { image: 'images/album/antelopecnyn/antelopecnyn_img1.png'},
-                                               { image: 'images/album/antelopecnyn/antelopecnyn_img2.png'},
-                                               ] }
-	                 ];
-	
+	$scope.albums = [];
 	$scope.currAlbum = [];
 	$scope.showSlideShow = false;
+
+        $scope.getAlbums = function() {
+            $http.get('resources/albums.json')
+            .success(function(data) {
+                if (data && data.length) {
+                    $scope.albums = [].concat(data);
+                }
+                $scope.loadImages();
+            });
+        };
 	
+        $scope.loadImages = function() {
+            var imageObj = new Image();
+
+            angular.forEach($scope.albums, function(album, idx) {
+                angular.forEach(album.images, function(img, idx) {
+                    imageObj.src = img.image;
+                });
+            });
+        };
+
 	$scope.showAlbum = function(albumName) {
 		var album = $filter('filter')($scope.albums, {name: albumName}, true);
 		if (album) {
@@ -264,13 +275,19 @@ myApp.controller('mainController', ['$scope', '$location', '$timeout', '$filter'
 			$scope.$apply();
 		}
 	};
-	
+
 	var init = function() {
-		$scope.setActive('home');
+		//$scope.setActive('home');
 		angular.element($window).on('click', onClick);
 
                 if ($scope.workEx.length <= 0) {
                     $scope.getWorkEx();
+                }
+
+                if ($scope.albums.length <= 0) {
+                    $scope.getAlbums();
+                } else {
+                    $scope.loadImages();
                 }
 	};
 	
